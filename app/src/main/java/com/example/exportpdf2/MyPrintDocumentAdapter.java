@@ -62,10 +62,10 @@ public class MyPrintDocumentAdapter extends PrintDocumentAdapter {
     }
 
     private int computePageCount(PrintAttributes printAttributes) {
-        int itemsPerPage = 4; // default item count for portrait mode
-        PrintAttributes.MediaSize pageSize = printAttributes.getMediaSize();
+        int itemsPerPage = 4; // 直向 default item 數量
+        PrintAttributes.MediaSize pageSize = printAttributes.getMediaSize();//在activity可以對物件做設定
         if (!pageSize.isPortrait()) {
-            // Six items per page in landscape orientation
+            // 橫向就改成一頁 6 item
             itemsPerPage = 6;
         }
         // Determine number of print items
